@@ -1,4 +1,5 @@
 using System.Text.Json.Serialization;
+using WebApplication1.Repositories.Context;
 using WebApplication1.Services.Implementation;
 using WebApplication1.Services.Interface;
 
@@ -7,13 +8,20 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 {
     options.JsonSerializerOptions.Converters.Add(new JsonStringEnumConverter());
 });
+builder.Services.AddDbContext<WeatherDbContext>();
 
 builder.Services.AddScoped<IWeatherService,WeatherService>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
+using (var scope = app.Services.CreateScope())
+{
+    var services = scope.ServiceProvider;
 
+    var context = services.GetRequiredService<WeatherDbContext>();
+    context.Database.EnsureCreated();
+}
 if (app.Environment.IsDevelopment())
 {
     app.UseSwagger();
