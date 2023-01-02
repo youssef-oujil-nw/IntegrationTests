@@ -1,5 +1,7 @@
 using System.Text.Json.Serialization;
 using WebApplication1.Repositories.Context;
+using WebApplication1.Repositories.Implementation;
+using WebApplication1.Repositories.Interfaces;
 using WebApplication1.Services.Implementation;
 using WebApplication1.Services.Interface;
 
@@ -11,6 +13,7 @@ builder.Services.AddControllers().AddJsonOptions(options =>
 builder.Services.AddDbContext<WeatherDbContext>();
 
 builder.Services.AddScoped<IWeatherService,WeatherService>();
+builder.Services.AddScoped<IWeatherRepository,WeatherRepository>();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 

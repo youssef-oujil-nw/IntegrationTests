@@ -4,6 +4,14 @@ namespace WebApplication1.Entities;
 
 public class WeatherReportEntity
 {
+    public WeatherReportEntity(Location location, int degree, WeatherStatus status, DateTime time)
+    {
+        Location = location;
+        Degree = degree;
+        Status = status;
+        Time = time;
+    }
+
     public Guid Id { get; set; }
     public Location Location { get; set; }
     public int Degree { get; set; }
