@@ -5,5 +5,6 @@ namespace WebApplication1.Services.Interface;
 
 public interface IWeatherService
 {
-    WeatherStatus GetWeatherStatus(int degree);
+    Task<IEnumerable<WeatherReport>> GetLocationWeatherReports(Location location);
+    Task<Guid> CreateWeatherReport(WeatherReport weatherReport);
 }

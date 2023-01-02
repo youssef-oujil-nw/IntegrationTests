@@ -15,5 +15,7 @@
     <ItemGroup>
         <ProjectReference Include="..\WebApplication1\WebApplication1.csproj" />
     </ItemGroup>
-
+    <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+        <DefineConstants>TRACE;SQLiteVersion</DefineConstants>
+    </PropertyGroup>
 </Project>
