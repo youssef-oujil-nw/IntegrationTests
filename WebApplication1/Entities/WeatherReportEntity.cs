@@ -10,6 +10,13 @@ public class WeatherReportEntity
         Degree = degree;
         Status = status;
         Time = time;
+    } public WeatherReportEntity(Guid id, Location location, int degree, WeatherStatus status, DateTime time)
+    {
+        Id = id;
+        Location = location;
+        Degree = degree;
+        Status = status;
+        Time = time;
     }
 
     public Guid Id { get; set; }

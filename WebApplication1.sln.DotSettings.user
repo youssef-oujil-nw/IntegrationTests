@@ -1,17 +1,13 @@
 ﻿<wpf:ResourceDictionary xml:space="preserve" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" xmlns:s="clr-namespace:System;assembly=mscorlib" xmlns:ss="urn:shemas-jetbrains-com:settings-storage-xaml" xmlns:wpf="http://schemas.microsoft.com/winfx/2006/xaml/presentation">
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=4e6769a2_002D1b6a_002D47d4_002Db9f7_002Dff7820700f6c/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="above40Degree_ShouldReturn_Hot #3" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::05E0B9CB-CC0B-4D88-8AF1-8F91F23B92D4::net6.0::WebApplication1.test.ControllerTest.WeatherControllerTest.Degrees_ShouldReturnTheRightStatus&lt;/TestId&gt;&#xD;
-    &lt;TestId&gt;xUnit::05E0B9CB-CC0B-4D88-8AF1-8F91F23B92D4::net6.0::WebApplication1.test.ControllerTest.WeatherControllerTest.TestingMutile&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
+	
 	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=67cc521d_002D478a_002D42d8_002Dbde2_002Daaf912c0a906/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="above40Degree_ShouldReturn_Hot" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
-  &lt;TestAncestor&gt;&#xD;
-    &lt;TestId&gt;xUnit::05E0B9CB-CC0B-4D88-8AF1-8F91F23B92D4::net6.0::WebApplication1.test.ControllerTest.WeatherControllerTest.above40Degree_ShouldReturn_Hot&lt;/TestId&gt;&#xD;
-  &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String>
-	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=b92ab2f5_002Dc3b2_002D4b73_002D9924_002Da97ed25bbbe6/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" Name="above40Degree_ShouldReturn_Hot #2" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
   &lt;TestAncestor&gt;&#xD;
     &lt;TestId&gt;xUnit::05E0B9CB-CC0B-4D88-8AF1-8F91F23B92D4::net6.0::WebApplication1.test.ControllerTest.WeatherControllerTest&lt;/TestId&gt;&#xD;
   &lt;/TestAncestor&gt;&#xD;
-&lt;/SessionState&gt;</s:String></wpf:ResourceDictionary>
+&lt;/SessionState&gt;</s:String>
+	<s:String x:Key="/Default/Environment/UnitTesting/UnitTestSessionStore/Sessions/=e8dc1e81_002D9240_002D465a_002D8f19_002D9630c6f6f9e5/@EntryIndexedValue">&lt;SessionState ContinuousTestingMode="0" IsActive="True" Name="WeatherControllerTest" xmlns="urn:schemas-jetbrains-com:jetbrains-ut-session"&gt;&#xD;
+  &lt;TestAncestor&gt;&#xD;
+    &lt;TestId&gt;xUnit::05E0B9CB-CC0B-4D88-8AF1-8F91F23B92D4::net6.0::WebApplication1.test.ControllerTest.WeatherControllerTest&lt;/TestId&gt;&#xD;
+  &lt;/TestAncestor&gt;&#xD;
+&lt;/SessionState&gt;</s:String>
+	</wpf:ResourceDictionary>
