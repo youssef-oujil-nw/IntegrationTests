@@ -31,6 +31,8 @@ public class WeatherRepository:IWeatherRepository
         var weatherReportEntity =
             new WeatherReportEntity(weatherReport.Location, weatherReport.Degree, weatherReport.Status,weatherReport.Time);
         var entry = await _weatherDbContext.WeatherReport.AddAsync(weatherReportEntity);
+        await _weatherDbContext.SaveChangesAsync();
+        entry.State = EntityState.Detached; 
         return entry.Entity.Id;
     }
 }

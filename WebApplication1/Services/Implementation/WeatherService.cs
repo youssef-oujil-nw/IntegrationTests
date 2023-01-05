@@ -1,5 +1,6 @@
 ﻿using WebApplication1.Aggregates;
 using WebApplication1.Aggregates.Enums;
+using WebApplication1.Commands;
 using WebApplication1.Repositories.Interfaces;
 using WebApplication1.Services.Interface;
 
@@ -44,8 +45,11 @@ public class WeatherService:IWeatherService
         return _weatherRepository.GetWeatherByLocation(location);
     }
 
-    public Task<Guid> CreateWeatherReport(WeatherReport weatherReport)
+    public async Task<Guid> CreateWeatherReport(CreateWeatherReportCommand weatherReportCommand)
     {
-        return _weatherRepository.CreateWeaTheReport(weatherReport);
+        var weatherStatus = GetWeatherStatus(weatherReportCommand.Degree);
+        var weatherReport = new WeatherReport(weatherReportCommand.Location, weatherReportCommand.Degree, weatherStatus,
+            weatherReportCommand.Time);
+        return await _weatherRepository.CreateWeaTheReport(weatherReport);
     }
 }

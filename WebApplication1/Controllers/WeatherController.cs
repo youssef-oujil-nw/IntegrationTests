@@ -1,4 +1,6 @@
 ﻿using Microsoft.AspNetCore.Mvc;
+using WebApplication1.Aggregates.Enums;
+using WebApplication1.Commands;
 using WebApplication1.DTOs;
 using WebApplication1.Services.Interface;
 
@@ -15,10 +17,20 @@ public class WeatherController:ControllerBase
     }
 
     [HttpGet]
-    [Route("{degree}")]
-    public GetWeatherStatusResponse GetWeatherStatus(int degree)
+    [Route("{location}")]
+    public async Task<IEnumerable<GetWeatherStatusResponse>> GetWeatherStatus(Location location)
     {
-        var weatherStatus = _weatherService.GetWeatherStatus(degree);
-        return new GetWeatherStatusResponse(weatherStatus);
+        var weatherReports = await _weatherService.GetLocationWeatherReports(location);
+        return weatherReports.Select( weatherReport => new GetWeatherStatusResponse(weatherReport.Status,weatherReport.Degree,weatherReport.Time));
+    }    
+    
+    [HttpPost]
+    [Route("")]
+    public async Task<AddWeatherReportResponse> GetWeatherStatus([FromBody] AddWeatherReportRequest addWeatherReportRequest)
+    {
+        var createWeatherReportCommand = new CreateWeatherReportCommand(addWeatherReportRequest.Degree,
+            addWeatherReportRequest.Time, addWeatherReportRequest.Location);
+        var weatherReportId = await _weatherService.CreateWeatherReport(createWeatherReportCommand);
+        return new AddWeatherReportResponse(weatherReportId);
     }
 }
